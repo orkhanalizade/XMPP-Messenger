@@ -32,6 +32,15 @@ class ContactListTableViewController: UITableViewController, OneRosterDelegate {
 		if OneChat.sharedInstance.isConnected() {
 			navigationItem.title = "Select a recipient"
 		}
+		
+		// Mark: Checking the internet connection
+        	if !OneChat.sharedInstance.isConnectionAvailable() {
+            		let alertController = UIAlertController(title: "Error", message: "Please check the internet connection.", preferredStyle: UIAlertControllerStyle.Alert)
+            			alertController.addAction(UIAlertAction(title: "Dissmiss", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                		//do something
+            		}))
+            		self.presentViewController(alertController, animated: true, completion: nil)
+        	}
 	}
 	
 	override func viewWillDisappear(animated: Bool) {
