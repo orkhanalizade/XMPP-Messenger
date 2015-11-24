@@ -29,6 +29,9 @@ class OpenChatsTableViewController: UITableViewController, OneRosterDelegate {
 		}
 		
 		tableView.rowHeight = 50
+		
+		// Mark: Will show the label with the text "No recent chats" if there is no open chats
+        	view.addSubview(OneChats.noRecentChats())
 	}
 	
 	override func viewWillDisappear(animated: Bool) {
