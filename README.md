@@ -1,4 +1,4 @@
-# XMPP-MESSENGER-IOS
+# XMPP MESSENGER
 
 [![Version](https://img.shields.io/cocoapods/v/xmpp-messenger-ios.svg?style=flat)](http://cocoapods.org/pods/xmpp-messenger-ios)
 [![License](https://img.shields.io/cocoapods/l/xmpp-messenger-ios.svg?style=flat)](http://cocoapods.org/pods/xmpp-messenger-ios)
@@ -8,27 +8,20 @@
 
 Orkhan Alizade
 
-## Contact with me by:
+## Contact with me:
 
 alizadeorkhan@yahoo.com
 
 ## Installation
 
-xmpp-messenger-ios is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your ```Podfile```:
-
-```ruby
-pod "xmpp-messenger-ios"
-```
-
-If you can't use cocoapod, you will have to download the files and add it to your ```Xcode```project.
+Download the files and add it to your ```Xcode```project.
 
 ###Disclaimer
 xmpp-messenger-ios was build for ```Xcode 7``` and ```Swift 2```, if you haven't upgraded yet, you should.
 
 ## License
 
-xmpp-messenger-ios is available under the MIT license. See the LICENSE file for more info.
+XMPP Messenger is available under the MIT license. See the LICENSE file for more info.
 
 # Tutorial example: OneChat
 We will build a Swift XMPP client built on [XMPP Framework](https://github.com/processone/XMPPFramework), using [xmpp-messenger-ios](https://github.com/processone/xmpp-messenger-ios) and [JSQMessageViewControllerSwift](https://github.com/jessesquires/JSQMessagesViewController)
