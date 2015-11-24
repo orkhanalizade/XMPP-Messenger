@@ -4,6 +4,14 @@
 [![License](https://img.shields.io/cocoapods/l/xmpp-messenger-ios.svg?style=flat)](http://cocoapods.org/pods/xmpp-messenger-ios)
 [![Platform](https://img.shields.io/cocoapods/p/xmpp-messenger-ios.svg?style=flat)](http://cocoapods.org/pods/xmpp-messenger-ios)
 
+## Author
+
+Orkhan Alizade
+
+## Contact with me by:
+
+alizadeorkhan@yahoo.com
+
 ## Installation
 
 xmpp-messenger-ios is available through [CocoaPods](http://cocoapods.org). To install
@@ -17,10 +25,6 @@ If you can't use cocoapod, you will have to download the files and add it to you
 
 ###Disclaimer
 xmpp-messenger-ios was build for ```Xcode 7``` and ```Swift 2```, if you haven't upgraded yet, you should.
-
-## Author
-
-Made in Paris by [ProcessOne](https://www.process-one.net/en/)
 
 ## License
 
