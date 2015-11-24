@@ -17,7 +17,7 @@ alizadeorkhan@yahoo.com
 Download the files and add it to your ```Xcode```project.
 
 ###Disclaimer
-xmpp-messenger-ios was build for ```Xcode 7``` and ```Swift 2```, if you haven't upgraded yet, you should.
+XMPP Messenger was build for ```Xcode 7``` and ```Swift 2```, if you haven't upgraded yet, you should.
 
 ## License
 
