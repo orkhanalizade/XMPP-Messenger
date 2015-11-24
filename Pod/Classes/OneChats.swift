@@ -5,6 +5,7 @@
 //  Created by Paul on 04/03/2015.
 //  Copyright (c) 2015 ProcessOne. All rights reserved.
 //
+//  Bugs fixed by Orkhan Alizade 24/11/2015
 
 import Foundation
 import XMPPFramework
@@ -93,28 +94,6 @@ public class OneChats: NSObject, NSFetchedResultsControllerDelegate {
 		
 		fetchRequest.predicate = predicate
 		fetchRequest.fetchLimit = 1
-		
-		//		if let results = moc?.executeFetchRequest(fetchRequest, error: nil) {
-		//			println("get user from xmpp - results")
-		//			var user: XMPPUserCoreDataStorageObject
-		//			var archivedUser = NSMutableArray()
-		//
-		//			for user in results {
-		//				println(user)
-		//				// var element = DDXMLElement(XMLString: user.messageStr, error: nil)
-		//				//        let sender: String
-		//				//
-		//				//        if element.attributeStringValueForName("to") != NSUserDefaults.standardUserDefaults().stringForKey("kXMPPmyJID")! && !(element.attributeStringValueForName("to") as NSString).containsString(NSUserDefaults.standardUserDefaults().stringForKey("kXMPPmyJID")!) {
-		//				//          sender = element.attributeStringValueForName("to")
-		//				//          if !archivedMessage.containsObject(sender) {
-		//				//            archivedMessage.addObject(sender)
-		//				//          }
-		//				//        }
-		//			}
-		//			//println("so response \(archivedMessage.count) from \(archivedMessage)")
-		//			//return archivedMessage
-		//		}
-		//return nil
 	}
 	
 	
@@ -163,6 +142,12 @@ public class OneChats: NSObject, NSFetchedResultsControllerDelegate {
 			for message in results! {
 				moc?.deleteObject(message as! NSManagedObject)
 			}
+			
+			do {
+                		try moc?.save()
+            		} catch let error {
+                		print(error)
+            		}
 		} catch _ {
 		}
 	}
@@ -193,6 +178,12 @@ public class OneChats: NSObject, NSFetchedResultsControllerDelegate {
 							moc?.deleteObject(message as! NSManagedObject)
 						}
 					}
+					
+					do {
+                				try moc?.save()
+            				} catch let error {
+                				print(error)
+            				}
 				}
 			} catch _ {
 			}
