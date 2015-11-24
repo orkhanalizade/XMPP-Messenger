@@ -98,6 +98,10 @@ class OpenChatsTableViewController: UITableViewController, OneRosterDelegate {
             
             		refreshAlert.addAction(UIAlertAction(title: "Clear message history", style: .Destructive, handler: { (action: UIAlertAction!) in
                 		OneChats.removeUserAtIndexPath(indexPath)
+                		
+                		// Mark: Will show the label with the text "No recent chats" if there is no open chats
+                		self.view.addSubview(OneChats.noRecentChats())
+                		
                 		tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
             		}))
             
