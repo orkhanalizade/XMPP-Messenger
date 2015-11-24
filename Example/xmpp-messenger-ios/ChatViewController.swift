@@ -70,6 +70,15 @@ class ChatViewController: JSQMessagesViewController, OneMessageDelegate, Contact
 				addRecipient()
 			}
 		}
+		
+		// Mark: Checking the internet connection
+        	if !OneChat.sharedInstance.isConnectionAvailable() {
+            		let alertController = UIAlertController(title: "Error", message: "Please check the internet connection.", preferredStyle: UIAlertControllerStyle.Alert)
+            			alertController.addAction(UIAlertAction(title: "Dissmiss", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                		//do something
+            		}))
+            		self.presentViewController(alertController, animated: true, completion: nil)
+        	}
 	}
 	
 	override func viewDidAppear(animated: Bool) {
