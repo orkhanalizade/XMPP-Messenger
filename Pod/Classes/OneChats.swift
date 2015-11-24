@@ -189,4 +189,20 @@ public class OneChats: NSObject, NSFetchedResultsControllerDelegate {
 			}
 		}
 	}
+	
+	// Mark: Will show "No recent chats" on OpenChatsTableViewController
+	public class func noRecentChats() -> UIView {
+        	var noRecentChats = UILabel()
+        
+        	if sharedInstance.chatList.count == 0 {
+        	    let width = UIScreen.mainScreen().bounds.width
+        	    let height = UIScreen.mainScreen().bounds.height
+            
+        	    noRecentChats = UILabel(frame: CGRectMake((width - 140) / 2, (height - 25 - 120) / 2, 140, 50))
+        	    noRecentChats.text = "No recent chats"
+        	    noRecentChats.textAlignment = .Center
+        	    noRecentChats.textColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 0.5)
+        	}
+        	return noRecentChats
+    	}
 }
