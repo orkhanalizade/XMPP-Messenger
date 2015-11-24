@@ -106,6 +106,11 @@ class ChatViewController: JSQMessagesViewController, OneMessageDelegate, Contact
 		if userDetails == nil {
             		navigationItem.title = recipient.displayName
         	}
+        	
+        	if !OneChats.knownUserForJid(jidStr: recipient.jidStr) {
+            		messages = OneMessage.sharedInstance.loadArchivedMessagesFrom(jid: recipient.jidStr)
+            		finishReceivingMessageAnimated(true)
+        	}
 	}
 	
 	// Mark: JSQMessagesViewController method overrides
