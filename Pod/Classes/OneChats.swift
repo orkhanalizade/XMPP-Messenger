@@ -194,7 +194,7 @@ public class OneChats: NSObject, NSFetchedResultsControllerDelegate {
 	public class func noRecentChats() -> UIView {
         	var noRecentChats = UILabel()
         
-        	if sharedInstance.chatList.count == 0 {
+        	if sharedInstance.getActiveUsersFromCoreDataStorage()?.count == 0 {
         	    let width = UIScreen.mainScreen().bounds.width
         	    let height = UIScreen.mainScreen().bounds.height
             
