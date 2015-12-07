@@ -90,6 +90,15 @@ public class OneRoster: NSObject, NSFetchedResultsControllerDelegate {
 		}
 	}
 	
+	public func sendFriendRequestTo(username: String) {
+		presence.addAttributeWithName("type", stringValue: "subscribe")
+        	let presence: DDXMLElement = DDXMLElement.elementWithName("presence") as! DDXMLElement
+        	presence.addAttributeWithName("to", stringValue: username)
+        	presence.addAttributeWithName("from", stringValue: OneChat.sharedInstance.xmppStream?.myJID.bare())
+        
+		OneChat.sharedInstance.xmppStream?.sendElement(presence)
+    	}
+	
 	public class func removeUserFromRosterAtIndexPath(indexPath indexPath: NSIndexPath) {
 		let user = userFromRosterAtIndexPath(indexPath: indexPath)
 		sharedInstance.fetchedResultsControllerVar?.managedObjectContext.deleteObject(user)
